@@ -6,9 +6,12 @@ import sys
 import requests
 import re
 import openai
+from dotenv import load_dotenv
+load_dotenv()
 
 user_data = {}
 token = os.environ['SLACK_USER_TOKEN']
+openai.api_key = os.environ['OPENAI_API_KEY']
 
 def get_user_info(user_id):
   if user_id in user_data:
